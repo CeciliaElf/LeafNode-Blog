@@ -22,6 +22,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    nickname: {
+      comment: '暱稱',
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     age: {
       comment: '年齡',
       type: DataTypes.SMALLINT,
