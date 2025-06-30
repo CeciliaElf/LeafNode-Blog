@@ -7,7 +7,7 @@ Tag.init(
   {
     name: {
       comment: '標籤名稱',
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(20),
       allowNull: false,
       unique: true,
     },
@@ -21,6 +21,7 @@ Tag.init(
   {
     sequelize,
     modelName: 'Tag',
+    tableName: 'tags',
   }
 );
 

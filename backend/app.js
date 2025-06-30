@@ -1,5 +1,6 @@
-const { sequelize, isLinked } = require('./config/database');
-require('dotenv').config();
+require('dotenv').config({ path: '.env.development' });
+const sequelize = require('./config/database');
+const { isLinked } = require('./config/database');
 
 const express = require('express');
 // const bodyParser = require("body-parser");  // 用於處理 Http 請求體

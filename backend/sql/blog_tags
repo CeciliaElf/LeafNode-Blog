@@ -1,0 +1,11 @@
+-- 創建部落格-標籤關聯表
+CREATE TABLE `blog_tags` (
+  `blogId` INTEGER NOT NULL,
+  `tagId` INTEGER NOT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NOT NULL,
+  PRIMARY KEY (`blogId`, `tagId`),
+  KEY `tagId` (`tagId`),
+  CONSTRAINT `blog_tags_ibfk_1` FOREIGN KEY (`blogId`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `blog_tags_ibfk_2` FOREIGN KEY (`tagId`) REFERENCES `tags` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

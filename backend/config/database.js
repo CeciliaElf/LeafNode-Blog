@@ -1,6 +1,5 @@
 // 資料庫配置
 const { Sequelize } = require('sequelize');
-require('dotenv').config();
 
 const sequelize = new Sequelize(
   process.env.DB_NAME || 'leafnode_blog_db',
@@ -17,9 +16,12 @@ const isLinked = async () => {
   try {
     await sequelize.authenticate();
     console.log('已成功建立連接');
+    return true;
   } catch (error) {
     console.error('無法連接到資料庫:', error);
+    return false;
   }
 };
 
-module.exports = { sequelize, isLinked };
+module.exports = sequelize;
+module.exports.isLinked = isLinked;
